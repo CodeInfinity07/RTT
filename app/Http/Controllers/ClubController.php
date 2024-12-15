@@ -45,7 +45,7 @@ class ClubController extends Controller
         }
 
         // Check for an exact match of the whatsapp_number
-        $existingClub = Club::where('whatsapp_number', $sanitizedNumber)->first();
+        $existingClub = Club::where('whatsapp_number', $request->whatsapp_number)->first();
 
         if ($existingClub) {
             return redirect()->back()
