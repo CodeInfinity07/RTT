@@ -1,6 +1,5 @@
 @extends('layouts.master')
 @section('content')
-
     <!-- ===========Banner Section start Here========== -->
     <section class="pageheader-section" style="background-image: url(assets/images/pageheader/bg.jpg);">
         <div class="container">
@@ -30,18 +29,22 @@
                     </div>
                 @endif
 
-                <!-- Error Messages -->
-                @if ($errors->any())
+                @error('whatsapp_number')
                     <div class="alert alert-danger">
                         <ul>
-                            @foreach ($errors->all() as $error)
-                                <li>{{ $error }}</li>
-                            @endforeach
+                            <li>Yeh Phone number ek club ke sath already registered hai.</li>
                         </ul>
                     </div>
-                @endif
+                @enderror
 
-                <!-- Form Display Condition -->
+                 @error('club_code')
+                    <div class="alert alert-danger">
+                        <ul>
+                            <li>Yeh Club pehle se registered hai.</li>
+                        </ul>
+                    </div>
+                @enderror
+
                 @if (!session('success'))
                     <form class="account-form" method="post" action="{{ route('clubs.store') }}">
                         @csrf
@@ -77,5 +80,4 @@
         </div>
     </div>
     <!-- Registration Section Ends Here -->
-
 @endsection
