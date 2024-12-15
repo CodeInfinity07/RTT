@@ -32,7 +32,7 @@
                 @error('whatsapp_number')
                     <div class="alert alert-danger">
                         <ul>
-                            <li>Yeh Phone number ek club ke sath already registered hai.</li>
+                            <li>{{ $message }}</li>
                         </ul>
                     </div>
                 @enderror

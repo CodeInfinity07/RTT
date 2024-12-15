@@ -22,7 +22,7 @@ class ClubController extends Controller
             'club_name' => 'required|string|max:255',
             'club_code' => 'required|string|max:255',
             'club_rank' => 'required|integer',
-            'whatsapp_number' => 'required|string|max:15|regex:/^\+?[1-9]\d{1,14}$/',
+            'whatsapp_number' => 'required|string|max:255',
             'owner_name' => 'required|string|max:255'
         ]);
 
@@ -44,15 +44,12 @@ class ClubController extends Controller
                 ->withInput();
         }
 
-        // Extract the last 5 digits of the whatsapp number
-        $lastFiveDigits = substr($sanitizedNumber, -5);
-
-        // Check if any club already has a number ending with the same last 5 digits
-        $existingClub = Club::where('whatsapp_number', 'LIKE', "%{$lastFiveDigits}")->first();
+        // Check for an exact match of the whatsapp_number
+        $existingClub = Club::where('whatsapp_number', $sanitizedNumber)->first();
 
         if ($existingClub) {
             return redirect()->back()
-                ->withErrors(['whatsapp_number' => 'Yeh Phone number ek club ke sath already registered hai.'])
+                ->withErrors(['whatsapp_number' => 'Yeh Phone number '.$existingClub->club_name.' club ke sath already registered hai.'])
                 ->withInput();
         }
 
@@ -71,7 +68,5 @@ class ClubController extends Controller
 
         return redirect()->route('clubs.index')->with('success', 'Club created successfully!');
     }
-
-
 }
 
