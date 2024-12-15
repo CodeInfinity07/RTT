@@ -66,7 +66,7 @@ class ClubController extends Controller
             return redirect()->back()->with('error', 'Failed to create the club. Please try again.');
         }
 
-        return redirect()->route('clubs.index')->with('success', 'Club created successfully!');
+        return redirect()->back()->with('success', 'Club created successfully!');
     }
 }
 
