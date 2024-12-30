@@ -41,7 +41,7 @@
                                             <div class="col-md-2 col-5 p-0">
                                                 <div class="match-team-thumb text-center">
                                                     <a href="team-single.html" class="text-center"><img
-                                                            src="assets/images/banner/{{ $match->team1_id }}.png"
+                                                            src="assets/images/banner/a.png"
                                                             alt="team-img"></a>
                                                 </div>
 
@@ -52,21 +52,21 @@
                                             <div class="col-md-2 col-5 order-md-3 p-0">
                                                 <div class="match-team-thumb text-center">
                                                     <a href="team-single.html"><img
-                                                            src="assets/images/banner/{{ $match->team2_id }}.png"
+                                                            src="assets/images/banner/b.png"
                                                             alt="team-img"></a>
                                                 </div>
                                             </div>
                                             <div class="col-md-8 order-md-2 mt-4 mt-md-0">
                                                 <div class="match-game-info text-center">
                                                     <h4 style="font-size: 15px;"><a
-                                                            href="#" style="color: #fff !important">{{ $match->team1_name }} VS
-                                                            {{ $match->team2_name }}</a>
+                                                            href="#" style="color: #fff !important"><span style="text-align: left">{{ $match->team_a }}</span> VS
+                                                            <span style="text-align: right">{{ $match->team_b }}</span></a>
                                                     </h4>
                                                     <p class="d-flex flex-wrap justify-content-center">
                                                         <span
-                                                            class="match-date">{{ \Carbon\Carbon::parse($match->match_date)->format('d F Y') }}
+                                                            class="match-date">{{ \Carbon\Carbon::parse($match->date)->format('d F Y') }}
                                                         </span><span class="match-time">Time:
-                                                            {{ \Carbon\Carbon::parse($match->match_time)->format('g:i A') }}
+                                                            {{ \Carbon\Carbon::parse($match->time)->format('g:i A') }}
                                                         </span>
                                                     </p>
                                                     <ul
