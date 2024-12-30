@@ -11,7 +11,7 @@ Route::get('/teams', function () {
 Route::get('/rules', function () {
     return view('rules');
 });
-Route::get('/', [MatchController::class, 'home']);
+Route::get('/', [MatchController::class, 'index']);
 Route::get('/schedule', action: [MatchController::class, 'index']);
 Route::get('/', [ClubController::class, 'create'])->name('clubs.create');
 Route::post('/clubs', action: [ClubController::class, 'store'])->name('clubs.store');
