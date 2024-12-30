@@ -12,6 +12,5 @@ Route::get('/rules', function () {
     return view('rules');
 });
 Route::get('/', [MatchController::class, 'index']);
-Route::get('/schedule', action: [MatchController::class, 'index']);
-Route::get('/', [ClubController::class, 'create'])->name('clubs.create');
-Route::post('/clubs', action: [ClubController::class, 'store'])->name('clubs.store');
+Route::get('/schedule', [MatchController::class, 'index']);
+Route::post('/clubs', [ClubController::class, 'store'])->name('clubs.store');
