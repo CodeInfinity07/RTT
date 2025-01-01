@@ -47,7 +47,6 @@
                     </div>
                 @endif
 
-                @if (!session('success'))
                     <form class="account-form" method="post" action="{{ route('ids.store') }}">
                         @csrf
                         <div class="form-group">
@@ -65,7 +64,6 @@
                             <button type="submit" class="d-block default-button"><span>CONFIRM</span></button>
                         </div>
                     </form>
-                @endif
             </div>
         </div>
     </div>
