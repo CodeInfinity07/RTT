@@ -16,10 +16,10 @@ INSERT INTO matches (team_a, code_a, team_b, code_b, date, time)
 VALUES ('JACK SPARROW', 2407213, 'MUGHLIYA SULTANAT', 4896396, '2024-12-31', '23:30:00');
 
 INSERT INTO matches (team_a, code_a, team_b, code_b, date, time) 
-VALUES ('MUHABBAT KE JUGNU', 3739636, 'KARACHI', 5598834, '2025-01-01', '22:00:00');
+VALUES ('KARACHI', 5598834, 'YAARAM', 1317391, '2025-01-01', '22:00:00');
 
 INSERT INTO matches (team_a, code_a, team_b, code_b, date, time) 
-VALUES ('FRIENDS EMPIRE', 9528317, 'YAARAM', 1317391, '2025-01-01', '23:30:00');
+VALUES ('LAHORI DERA', 8592786, 'FRIENDS EMPIRE', 9528317, '2025-01-01', '23:30:00');
 
 INSERT INTO matches (team_a, code_a, team_b, code_b, date, time) 
 VALUES ('GUJJAR BRAND', 3843652, 'MALANG GANG', 4595600, '2025-01-02', '22:00:00');
@@ -49,7 +49,7 @@ INSERT INTO matches (team_a, code_a, team_b, code_b, date, time)
 VALUES ('LOYAL SQUAD', 6169049, 'GROOVESTATION', 6062781, '2025-01-06', '22:00:00');
 
 INSERT INTO matches (team_a, code_a, team_b, code_b, date, time) 
-VALUES ('MUHABBAT KE JUGNU', 4648018, 'PESHAWAR UNI', 9549494, '2025-01-06', '23:30:00');
+VALUES ('MEH KHANA', 9234512, 'PESHAWAR UNI', 9549494, '2025-01-06', '23:30:00');
 
 INSERT INTO matches (team_a, code_a, team_b, code_b, date, time) 
 VALUES ('CHILL LIFE', 2571819, 'VIP FAMILY 412', 2181412, '2025-01-07', '22:00:00');

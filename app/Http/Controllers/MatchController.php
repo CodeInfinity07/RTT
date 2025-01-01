@@ -15,6 +15,10 @@ class MatchController extends Controller
         return view('schedule', compact('matches'));
     }
 
+    public function player_id(){
+        return view('player_id');
+    }
+
     public function home(){
         // Get the current time
         $now = Carbon::now('Asia/Karachi');

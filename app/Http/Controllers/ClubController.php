@@ -15,6 +15,13 @@ class ClubController extends Controller
         return view('signup', compact('enrolled_clubs'));
     }
 
+    public function id_store()
+    {
+        $enrolled_clubs = Club::count();
+
+        return view('signup', compact('enrolled_clubs'));
+    }
+
     public function store(Request $request)
     {
         // Validate inputs
