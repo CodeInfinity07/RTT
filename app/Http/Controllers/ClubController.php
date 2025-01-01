@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Validator;
 use App\Models\Club;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+
 
 class ClubController extends Controller
 {
@@ -15,11 +17,42 @@ class ClubController extends Controller
         return view('signup', compact('enrolled_clubs'));
     }
 
-    public function id_store()
+    public function id_store(Request $request)
     {
-        $enrolled_clubs = Club::count();
+        $request->validate([
+            'club_code' => 'required|integer',
+            'player_id' => 'required|string',
+        ]);
 
-        return view('signup', compact('enrolled_clubs'));
+        $clubCode = $request->input('club_code');
+        $playerId = $request->input('player_id');
+
+        // Check if the player_id already exists in any club
+        $clubWithPlayer = DB::table('clubs')
+            ->whereJsonContains('player_ids', $playerId)
+            ->first();
+
+        if ($clubWithPlayer) {
+            return redirect()->back()->with('error', "Player ID $playerId already exists in club '{$clubWithPlayer->club_name}'.");
+        }
+
+        // Fetch the club to append the player_id
+        $club = DB::table('clubs')->where('club_code', $clubCode)->first();
+
+        if (!$club) {
+            return redirect()->back()->with('error', 'Club not found.');
+        }
+
+        $playerIds = $club->player_ids ? json_decode($club->player_ids, true) : [];
+        $playerIds[] = $playerId;
+
+        // Update the club with the new player_id
+        DB::table('clubs')
+            ->where('club_code', $clubCode)
+            ->update(['player_ids' => json_encode($playerIds)]);
+
+        return redirect()->back()->with('success', 'Player ID added successfully.');
+
     }
 
     public function store(Request $request)

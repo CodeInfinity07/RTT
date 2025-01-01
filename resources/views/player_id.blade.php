@@ -21,42 +21,45 @@
         <div class="container">
             <div class="account-wrapper">
                 <h3 class="title">ID Tool</h3>
+
                 <!-- Success Message -->
                 @if (session('success'))
                     <div class="alert alert-success">
-                        Club has been registered. All the best~!!
+                        {{ session('success') }}
                     </div>
                 @endif
 
-                @error('whatsapp_number')
+                <!-- Error Message -->
+                @if (session('error'))
                     <div class="alert alert-danger">
-                        <ul>
-                            <li>{{ $message }}</li>
-                        </ul>
+                        {{ session('error') }}
                     </div>
-                @enderror
+                @endif
 
-                @error('club_code')
+                <!-- Validation Errors -->
+                @if ($errors->any())
                     <div class="alert alert-danger">
                         <ul>
-                            <li>Yeh Club pehle se registered hai.</li>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
                         </ul>
                     </div>
-                @enderror
+                @endif
 
                 @if (!session('success'))
                     <form class="account-form" method="post" action="{{ route('ids.store') }}">
                         @csrf
                         <div class="form-group">
-                            <select aria-label="SELECT CLUB">
-                                <option selected>Open this select menu</option>
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
+                            <select required name="club_code" aria-label="SELECT CLUB">
+                                <option selected disabled>SELECT CLUB</option>
+                                @foreach($clubs as $club)
+                                    <option value="{{ $club->club_code }}">{{ $club->club_name }}</option>
+                                @endforeach
                             </select>
                         </div>
                         <div class="form-group">
-                            <input type="text" placeholder="Enter ID" id="player_id" name="player_id">
+                            <input required type="text" placeholder="Enter ID" id="player_id" name="player_id">
                         </div>
                         <div class="form-group">
                             <button type="submit" class="d-block default-button"><span>CONFIRM</span></button>

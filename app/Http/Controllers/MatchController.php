@@ -5,18 +5,20 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Carbon\Carbon; // For handling dates and times
 use App\Models\Matches; // Import the Match model
+use App\Models\Club; // Import the Match model
 
 class MatchController extends Controller
 {
     // Show a list of matches
     public function index()
     {
-        $matches = Matches::all(); // Fetch all matches
+        $matches = Matches::all();
         return view('schedule', compact('matches'));
     }
 
     public function player_id(){
-        return view('player_id');
+        $clubs = Club::all();
+        return view('player_id', compact('clubs'));
     }
 
     public function home(){
