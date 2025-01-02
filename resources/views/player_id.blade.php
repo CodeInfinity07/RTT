@@ -58,7 +58,7 @@
                             </select>
                         </div>
                         <div class="form-group">
-                            <input required type="text" placeholder="Enter ID" id="player_id" name="player_id">
+                            <input oninput="this.value = this.value.toUpperCase();" required type="text" placeholder="Enter ID" id="player_id" name="player_id">
                         </div>
                         <div class="form-group">
                             <button type="submit" class="d-block default-button"><span>CONFIRM</span></button>
