@@ -37,7 +37,7 @@ INSERT INTO matches (team_a, code_a, team_b, code_b, date, time)
 VALUES ("JUTT DON'T CARE", 1644607, 'EXODUS', 4404868, '2025-01-04', '22:00:00');
 
 INSERT INTO matches (team_a, code_a, team_b, code_b, date, time) 
-VALUES ('NO GO AREA', 7484553, 'SAMRA', 8874778, '2025-01-04', '23:30:00');
+VALUES ('NO GO AREA', 7484553, 'CITY OF LIONS', 5475383, '2025-01-04', '23:30:00');
 
 INSERT INTO matches (team_a, code_a, team_b, code_b, date, time) 
 VALUES ('REX SQUAD', 7238752, 'GUJJAR DA DERA', 4302033, '2025-01-05', '22:00:00');
