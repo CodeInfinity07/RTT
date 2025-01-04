@@ -14,6 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::table('matches', function (Blueprint $table) {
+            $table->id(); // Adds a primary key ID column.
             $table->string('winner')->nullable(); // Replace 'column_name' with the column after which you want to add the 'winner' column.
         });
     }
