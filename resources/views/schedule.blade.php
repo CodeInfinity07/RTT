@@ -41,8 +41,7 @@
                                             <div class="col-md-2 col-5 p-0">
                                                 <div class="match-team-thumb text-center">
                                                     <a href="team-single.html" class="text-center"><img
-                                                            src="assets/images/banner/a.png"
-                                                            alt="team-img"></a>
+                                                            src="assets/images/banner/a.png" alt="team-img"></a>
                                                 </div>
 
                                             </div>
@@ -51,24 +50,30 @@
                                             </div>
                                             <div class="col-md-2 col-5 order-md-3 p-0">
                                                 <div class="match-team-thumb text-center">
-                                                    <a href="team-single.html"><img
-                                                            src="assets/images/banner/b.png"
+                                                    <a href="team-single.html"><img src="assets/images/banner/b.png"
                                                             alt="team-img"></a>
                                                 </div>
                                             </div>
                                             <div class="col-md-8 order-md-2 mt-4 mt-md-0">
                                                 <div class="match-game-info text-center">
-                                                    <h4 style="font-size: 15px;"><a
-                                                            href="#" style="color: #fff !important"><span style="text-align: left">{{ $match->team_a }}</span> VS
+                                                    <h4 style="font-size: 15px;"><a href="#"
+                                                            style="color: #fff !important"><span
+                                                                style="text-align: left">{{ $match->team_a }}</span> VS
                                                             <span style="text-align: right">{{ $match->team_b }}</span></a>
                                                     </h4>
-                                                    <p class="d-flex flex-wrap justify-content-center">
-                                                        <span
-                                                            class="match-date">{{ \Carbon\Carbon::parse($match->date)->format('d F Y') }}
-                                                        </span><span class="match-time">Time:
-                                                            {{ \Carbon\Carbon::parse($match->time)->format('g:i A') }}
-                                                        </span>
-                                                    </p>
+                                                    @if ($match->winner !== null)
+                                                        <p class="d-flex justify-content-center">
+                                                                Winner: {{ $match->winner }}
+                                                        </p>
+                                                    @else
+                                                        <p class="d-flex flex-wrap justify-content-center">
+                                                            <span
+                                                                class="match-date">{{ \Carbon\Carbon::parse($match->date)->format('d F Y') }}
+                                                            </span><span class="match-time">Time:
+                                                                {{ \Carbon\Carbon::parse($match->time)->format('g:i A') }}
+                                                            </span>
+                                                        </p>
+                                                    @endif
                                                     <ul
                                                         class="match-social-list d-flex flex-wrap align-items-center justify-content-center">
                                                         <li><a href="#"><img src="assets/images/match/social-1.png"

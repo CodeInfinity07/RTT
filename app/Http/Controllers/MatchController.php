@@ -16,6 +16,33 @@ class MatchController extends Controller
         return view('schedule', compact('matches'));
     }
 
+    public function winner()
+    {
+        $matches = Matches::all();
+        return view('winner', compact('matches'));
+    }
+
+    public function winner_store(Request $request)
+    {
+        // Validate the request
+        $request->validate([
+            'winner_club' => 'required|string|max:255',
+        ]);
+
+        // Find the match by ID
+        $match = Matches::find($request->match_id);
+
+        if (!$match) {
+            return redirect()->back()->with('error', 'Match not found');
+        }
+
+        // Update the winner
+        $match->winner = $request->winner_club;
+        $match->save();
+
+        return redirect()->back()->with('success', 'Winner updated successfully');
+    }
+
     public function player_id(){
         $clubs = Club::all();
         return view('player_id', compact('clubs'));
