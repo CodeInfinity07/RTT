@@ -6,13 +6,14 @@ use Illuminate\Http\Request;
 use Carbon\Carbon; // For handling dates and times
 use App\Models\Matches; // Import the Match model
 use App\Models\Club; // Import the Match model
+use App\Models\Round2; // Import the Match model
 
 class MatchController extends Controller
 {
     // Show a list of matches
     public function index()
     {
-        $matches = Matches::all();
+        $matches = Round2::all();
         return view('schedule', compact('matches'));
     }
 
