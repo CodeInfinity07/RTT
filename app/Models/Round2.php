@@ -8,6 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Round2 extends Model
 {
     use HasFactory;
-    protected $table = 'round_2';
+    protected $table = 'round_3';
 
 }
