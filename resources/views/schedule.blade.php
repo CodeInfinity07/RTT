@@ -32,7 +32,7 @@
                                 <div class="match-inner">
                                     <div class="match-header d-flex flex-wrap justify-content-between align-items-center">
                                         <p class="match-team-info">
-                                            ROUND 3 <span class="fw-bold">8 Teams</span>
+                                            <span class="fw-bold">8 Teams</span>
                                         </p>
                                         <p class="match-prize">BO9 <span class="fw-bold">BlITZ</span> T/U</p>
                                     </div>
@@ -59,8 +59,8 @@
                                             <div class="col-md-8 order-md-2 mt-4 mt-md-0">
                                                 <div class="match-game-info text-center">
                                                     <h4 style="font-size: 15px;"><a
-                                                            href="#" style="color: #fff !important">{{ $match->team1 }} VS
-                                                            {{ $match->team2 }}</a>
+                                                            href="#" style="color: #fff !important">{{ $match->team_1 }} VS
+                                                            {{ $match->team_2 }}</a>
                                                     </h4>
                                                     <p class="d-flex flex-wrap justify-content-center">
                                                         <span
