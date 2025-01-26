@@ -23,7 +23,7 @@
             <div class="section-wrapper">
                 <ul
                     class="match-filter-button-group common-filter-button-group d-flex flex-wrap justify-content-center mb-5 text-uppercase">
-                    <li class="is-checked" data-filter="*">ROUND 2</li>
+                    <li class="is-checked" data-filter="*">ROUND 3</li>
                 </ul>
                 <div class="row g-4 match-grid">
                     @foreach ($matches as $match)
@@ -32,29 +32,52 @@
                                 <div class="match-inner">
                                     <div class="match-header d-flex flex-wrap justify-content-between align-items-center">
                                         <p class="match-team-info">
-                                            ROUND 2 <span class="fw-bold">32 Teams</span>
+                                            ROUND 3 <span class="fw-bold">8 Teams</span>
                                         </p>
-                                        <p class="match-prize"><span class="fw-bold">4</span> Players ARROW</p>
+                                        <p class="match-prize">BO9 <span class="fw-bold">BlITZ</span> T/U</p>
                                     </div>
                                     <div class="match-content gradient-bg-pink">
                                         <div class="row align-items-center justify-content-center">
+                                            <div class="col-md-2 col-5 p-0">
+                                                <div class="match-team-thumb text-center">
+                                                    <a href="team-single.html" class="text-center"><img
+                                                            src="assets/images/banner/a.png"
+                                                            alt="team-img"></a>
+                                                </div>
+
+                                            </div>
                                             <div class="col-2 d-md-none">
                                                 <img src="assets/images/match/vs.png" alt="vs">
                                             </div>
+                                            <div class="col-md-2 col-5 order-md-3 p-0">
+                                                <div class="match-team-thumb text-center">
+                                                    <a href="team-single.html"><img
+                                                            src="assets/images/banner/b.png"
+                                                            alt="team-img"></a>
+                                                </div>
+                                            </div>
                                             <div class="col-md-8 order-md-2 mt-4 mt-md-0">
                                                 <div class="match-game-info text-center">
-                                                <h4 style="font-family: monospace;">
-                                                    <span style="display: block; padding: 5px 10px; color: white; background-color:rgb(64, 12, 0);">{{ $match->team1 }}</span>
-                                                    <span style="display: block; padding: 5px 10px; color: white; background-color:rgb(0, 53, 10);">{{ $match->team2 }}</span>
-                                                    <span style="display: block; padding: 5px 10px; color: white; background-color:rgb(0, 9, 47);">{{ $match->team3 }}</span>
-                                                    <span style="display: block; padding: 5px 10px; color: white; background-color:rgb(64, 0, 87);">{{ $match->team4 }}</span>
-                                                </h4>
-
-                                                <p class="d-flex flex-wrap justify-content-center">
-                                                    <span
-                                                        class="match-date">{{ \Carbon\Carbon::parse($match->match_date)->format('d F Y') }}
-                                                    </span><span class="match-time">Time: 10:00 PM (PST)                                                    </span>
-                                                </p>
+                                                    <h4 style="font-size: 15px;"><a
+                                                            href="#" style="color: #fff !important">{{ $match->team1 }} VS
+                                                            {{ $match->team2 }}</a>
+                                                    </h4>
+                                                    <p class="d-flex flex-wrap justify-content-center">
+                                                        <span
+                                                            class="match-date">{{ \Carbon\Carbon::parse($match->match_date)->format('d F Y') }}
+                                                        </span><span class="match-time">Time:
+                                                            {{ \Carbon\Carbon::parse($match->match_time)->format('g:i A') }}
+                                                        </span>
+                                                    </p>
+                                                    <ul
+                                                        class="match-social-list d-flex flex-wrap align-items-center justify-content-center">
+                                                        <li><a href="#"><img src="assets/images/match/social-1.png"
+                                                                    alt="vimeo"></a></li>
+                                                        <li><a href="#"><img src="assets/images/match/social-2.png"
+                                                                    alt="youtube"></a></li>
+                                                        <li><a href="#"><img src="assets/images/match/social-3.png"
+                                                                    alt="twitch"></a></li>
+                                                    </ul>
                                                 </div>
                                             </div>
                                         </div>
